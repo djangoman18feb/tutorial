@@ -10,6 +10,9 @@ class UserProfile(models.Model):
     website = models.URLField(default='')
     phone = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.user.username + '-' + self.user.get_full_name()
+
 #we can use signals to perform certian actions(run certain chunk of codes if any defined changes to database is detected
 def create_profile(sender, **kwargs):
     if kwargs['created']:
