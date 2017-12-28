@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tutorial.login_middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'tutorial.urls'
@@ -126,3 +127,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/account/' #we need to redirect user to some page after they login so to get resolved url we need to pass this variable
+LOGIN_URL = '/account/login/'
+LOGIN_EXEMPT_URLS = (
+    r'^account/logout/$',
+    r'^account/register/$',
+    r'^account/reset_password/$',
+    r'^account/reset_password/done/$',
+    r'^account/reset_password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
+    r'^reset_password/complete/$',
+)

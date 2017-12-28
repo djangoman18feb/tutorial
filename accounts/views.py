@@ -2,11 +2,11 @@ from django.shortcuts import HttpResponse, render, redirect
 from .forms import RegistrationForm, EditProfileForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+
 # Create your views here.
 
 def home(request):
-    return HttpResponse('i am home')
-
+    return render(request, template_name='accounts/home.html')
 
 def register(request):
     if request.method == 'POST':
