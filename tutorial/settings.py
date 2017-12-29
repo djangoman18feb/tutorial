@@ -126,6 +126,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'tutorial/media')
+
 LOGIN_REDIRECT_URL = '/account/' #we need to redirect user to some page after they login so to get resolved url we need to pass this variable
 LOGIN_URL = '/account/login/'
 LOGIN_EXEMPT_URLS = (

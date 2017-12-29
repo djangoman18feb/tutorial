@@ -9,6 +9,7 @@ class UserProfile(models.Model):
     address = models.CharField(max_length=100, default='')
     website = models.URLField(default='')
     phone = models.IntegerField(default=0)
+    image = models.ImageField(upload_to='profile_image', blank=True)
 
     def __str__(self):
         return self.user.username + '-' + self.user.get_full_name()
