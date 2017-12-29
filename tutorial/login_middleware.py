@@ -9,7 +9,6 @@ EXEMPT_URLS = [re.compile(settings.LOGIN_URL.lstrip('/'))]
 if hasattr(settings,'LOGIN_EXEMPT_URLS'):
     EXEMPT_URLS += [re.compile(url) for url in settings.LOGIN_EXEMPT_URLS]
 
-
 class LoginRequiredMiddleware:
 
     def __init__(self, get_response):
@@ -26,7 +25,7 @@ class LoginRequiredMiddleware:
         # if not request.user.is_authenticated():
         #     if not any(url.match(path) for url in EXEMPT_URLS):
         #         return redirect(settings.LOGIN_URL)
-        if path==reverse(viewname='logout').lstrip('/'):
+        if path==reverse(viewname='accounts:logout').lstrip('/'):
             logout(request)
         url_is_exempt = any(url.match(path) for url in EXEMPT_URLS)
         if request.user.is_authenticated() and url_is_exempt:
