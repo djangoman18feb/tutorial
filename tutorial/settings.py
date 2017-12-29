@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts',
+    'home',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -131,7 +132,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'tutorial/media')
 
-LOGIN_REDIRECT_URL = '/account/' #we need to redirect user to some page after they login so to get resolved url we need to pass this variable
+LOGIN_REDIRECT_URL = '/home/' #we need to redirect user to some page after they login so to get resolved url we need to pass this variable
 LOGIN_URL = '/account/login/'
 LOGIN_EXEMPT_URLS = (
     r'^account/logout/$',

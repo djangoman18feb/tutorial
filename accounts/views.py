@@ -5,15 +5,12 @@ from django.contrib.auth import update_session_auth_hash
 
 # Create your views here.
 
-def home(request):
-    return render(request, template_name='accounts/home.html')
-
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/account')
+            return redirect(reverse('home:home'))
     else:
         form = RegistrationForm()
         args = {'form': form}
