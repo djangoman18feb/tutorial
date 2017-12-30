@@ -2,6 +2,9 @@
 {% block body %}
     <div class="container">
         <h1>Profile Page</h1>
+        {% if user.userprofile.image %}
+        <img src="{{ user.userprofile.image.url }}" width="100">
+        {% endif %}
         <p>User - {{ user }}</p>
         <p>Username - {{ user.username }}</p>
         <p>Email - {{ user.email }}</p>
@@ -13,8 +16,6 @@
         <p>Address - {{ user.userprofile.address }}</p>
         <p>Phone - {{ user.userprofile.phone }}</p>
         <p>website - {{ user.userprofile.website }}</p>
-        {% if user.userprofile.image %}
-            <img src="{{ user.userprofile.image.url }}" alt="No Image" width="240"/>
-        {% endif %}
+
     </div>
 {% endblock %}
