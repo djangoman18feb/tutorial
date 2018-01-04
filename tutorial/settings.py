@@ -26,13 +26,13 @@ SECRET_KEY = 'ronuoiozqnxn*#yjcccxnr=9ppg*5491r2m-+ift@4vlg-%&cb'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
     'accounts',
     'home',
+    'apage',
+    'data_writing_test',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,7 +132,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'tutorial/media')
 
-LOGIN_REDIRECT_URL = '/home/' #we need to redirect user to some page after they login so to get resolved url we need to pass this variable
+LOGIN_REDIRECT_URL = '/apage/' #we need to redirect user to some page after they login so to get resolved url we need to pass this variable
 LOGIN_URL = '/account/login/'
 LOGIN_EXEMPT_URLS = (
     r'^account/logout/$',
@@ -140,5 +140,5 @@ LOGIN_EXEMPT_URLS = (
     r'^account/reset_password/$',
     r'^account/reset_password/done/$',
     r'^account/reset_password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
-    r'^account/reset_password/complete/$'
-)
+    r'^account/reset_password/complete/$',
+    )

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container">
+        <div class="col-md-8">
+            <img src="{{ all_authors1.author.author_image.url }}" alt="No Image" height="266" width="168"/><br>
+            <h3>Name: {{ all_authors1.author.author_name }}</h3>
+            <h3>Title: {{ all_authors1.author.author_title }}</h3>
+            <h3>Followers:{{ all_authors1.author.followers }}</h3>
+            <p>Description: {{ all_authors1.author.author_description }}</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Other Stuff</h3>
+            <h4>Info: {{ all_authors1.author.author_info }}</h4>
+        </div>
+
+    </div>
+{% endblock %}

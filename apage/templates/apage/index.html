@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block page_title %}Quotes{% endblock %}
+{% block body %}
+    <div class="container">
+    <h2>Quotes</h2>
+    <form method="GET" action="">
+        <input type="search" placeholder="Search Quotes" name="q">
+        <button type="Submit" value="Submit">Submit</button>
+    </form>
+    {% for quote in all_quotes %}
+        <h4>{{ quote.quote }}</h4>
+        <h4>{{ quote.pk }}</h4>
+        <a href="{% url 'apage:author_detail' quote.pk %}"><h5>{{ quote.author.author_name }}</h5></a>
+            <h5>Tags:{{ quote.tag }}, Followers:{{ quote.author.followers }}, Likes{{ quote.likes }}</h5>
+            <a href="#"><h5>Comment!</h5></a>
+        <br>
+    {% endfor %}
+</div>
+{% endblock %}

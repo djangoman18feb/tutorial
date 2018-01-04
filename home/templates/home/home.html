@@ -1,22 +1,28 @@
 {% extends 'base.html' %}
 {% block body %}
     <div class="container">
-    <div class="col-md-8">
-            <h2>Home</h2>
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-            <button type="submit">Submit</button>
-            </form>
-            {% for post in posts %}
-                    <h1>{{ post.post }}</h1>
-                    <p>Posted by {{ post.user.get_full_name }} on {{ post.created }}</p>
-            {% endfor %}
-    </div>
+        <div class="col-md-8">
+                <form method="get">
+                    <br>
+                    <input type="text" name="q" placeholder="Search Posts"/>
+                    <input type="submit" value="Search"/>
+                </form>
+
+                <h2>Community Page</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                <button type="submit">Submit</button>
+                </form>
+                {% for post in posts %}
+                        <h1>{{ post.post }}</h1>
+                        <p>Posted by {{ post.user.get_full_name }} on {{ post.created }}</p>
+                {% endfor %}
+        </div>
         <div class="col-md-4">
             <h2>Other People</h2>
             {% for friend in friends_list %}
-                <a href="{% url 'accounts:view_profile_with_pk' pk=user.pk %}"><h3>{{ friend.username }}</h3></a>
+                <a href="{% url 'accounts:view_profile_with_pk' pk=friend.pk %}"><h3>{{ friend.username }}</h3></a>
             {% endfor %}
         </div>
 

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data_Home</title>
+</head>
+<body>
+
+<h2>This is Data_Center Home</h2>
+<h3>Here are your uploaded data till now!</h3>
+{% for quote in all_quotes %}
+    {{ quote.quote }}
+    <br>
+{% endfor %}
+</body>
+</html>

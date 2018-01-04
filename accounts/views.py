@@ -3,6 +3,7 @@ from .forms import RegistrationForm, EditProfileForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
+from apage.models import Author, Quote
 
 # Create your views here.
 
@@ -26,6 +27,8 @@ def register(request):
 #         user = request.user
 #         args = {'user': user}
 #     return render(request, 'accounts/profile.html', args)
+
+
 
 
 def view_profile(request, pk=None):
