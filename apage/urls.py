@@ -5,7 +5,9 @@ urlpatterns = [
 #    url(r'^$', views.index, name='home'),
     url(r'^$', views.index, name='index'),
     #/apage/quotes/popular
-    url(r'^quotes/popular/$', views.popular_quotes, name='popular_quotes'),
+    #url(r'^quotes/popular/$', views.popular_quotes, name='popular_quotes'),
+
+    #url(r'^quotes/(?P<pk>\d+)/favorite/$', views.favorite, name='favorite'),
     #/apage/author_detail/pk
     #url(r'^author_detail/(?P<pk>\d+)/$', views.detail, name='author_detail'),
 

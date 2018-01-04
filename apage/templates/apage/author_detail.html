@@ -2,7 +2,9 @@
 {% block body %}
     <div class="container">
         <div class="col-md-8">
-            <img src="{{ all_authors1.author.author_image.url }}" alt="No Image" height="266" width="168"/><br>
+            {% if all_authors1.author.author_image %}
+                <img src="{{ all_authors1.author.author_image.url }}" alt="No Image" height="266" width="168"/><br>
+            {% endif %}
             <h3>Name: {{ all_authors1.author.author_name }}</h3>
             <h3>Title: {{ all_authors1.author.author_title }}</h3>
             <h3>Followers:{{ all_authors1.author.followers }}</h3>
