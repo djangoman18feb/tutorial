@@ -4,13 +4,16 @@ from apage import views
 urlpatterns = [
 #    url(r'^$', views.index, name='home'),
     url(r'^$', views.index, name='index'),
-    #/apage/quotes/popular
-    #url(r'^quotes/popular/$', views.popular_quotes, name='popular_quotes'),
+    #/quotes/popular
+    #url(r'^popular/$', views.popular_quotes, name='popular_quotes'),
 
-    #url(r'^quotes/(?P<pk>\d+)/favorite/$', views.favorite, name='favorite'),
-    #/apage/author_detail/pk
+
     #url(r'^author_detail/(?P<pk>\d+)/$', views.detail, name='author_detail'),
-
     url(r'^(?P<pk>[0-9]+)/$', views.Detailview.as_view(), name='author_detail'),
 
   ]
+
+#Not working code giving reverse not found error
+# #/quote/quote_id/favorite/
+# url(r'^(?P<quote_id>[0-9]+)/favorite/$', views.favorite, name='favorite_quote'),
+#
